@@ -59,7 +59,7 @@ def destroy_login_session():
 '''
 to create the project database, open terminal
 - type python and press enter
-- type 
+- type
     from app import app, db
     with app.app_context():
         db.create_all()
@@ -228,11 +228,11 @@ def convert_audio(id):
 
         # Generate the PDF with the edited text
         file_path = generate_ebook(edited_text, audio.audio_file, author_name=author_name)
-        
+
         # Mark the audio as converted and save changes
         audio.is_converted = True
         db.session.commit()
-        
+
         # Store the PDF file path in the session
         session['pdf_file'] = file_path
         flash('Your eBook has been created successfully!', 'success')
